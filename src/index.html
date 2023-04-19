@@ -1,0 +1,79 @@
+---
+title: Incremental Software
+layout: layouts/pages/home.njk
+css: |-
+  :root {
+    font-size: 16px;
+    --size-300: clamp(0.7rem, 0.66rem + 0.2vw, 0.8rem);
+    --size-400: clamp(0.88rem, 0.83rem + 0.24vw, 1rem);
+    --size-500: clamp(1.09rem, 1rem + 0.47vw, 1.33rem);
+    --size-600: clamp(1.37rem, 1.21rem + 0.8vw, 1.78rem);
+    --size-700: clamp(1.71rem, 1.45rem + 1.29vw, 2.37rem);
+    --size-800: clamp(2.14rem, 1.74rem + 1.99vw, 3.16rem);
+    --size-900: clamp(2.67rem, 2.07rem + 3vw, 4.21rem);
+    --size-1000: clamp(3.34rem, 2.45rem + 4.43vw, 5.61rem);
+  }
+
+  body {
+    margin: 0;
+    padding: 1rem;
+    padding: var(--size-600);
+    font-family: sans-serif;
+    font-size: var(--size-500);
+  }
+  header {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    gap: 4vmin;
+    margin-bottom: 10vmin;
+  }
+  #logo {
+    height: 40vmin;
+    min-width: calc(40vmin / 3 * 2);
+  }
+  main {
+    width: 93vmin;
+    margin: 0 auto;
+  }
+  h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 11vmin;
+  }
+  h1 > span {
+    display: inline-block;
+  }
+  .link-wrapper {
+    all: unset;
+    margin-top: 10vmin;
+    display: flex;
+    justify-content: center;
+  }
+  .link {
+    all: unset;
+    padding: 0 var(--size-700);
+  }
+  .link:not(:last-child) {
+    border-right: 1px solid black;
+  }
+  a {
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+---
+<header>
+  <svg id="logo" lang="en" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 2 3">
+    <rect x="0" y="0" height="1" width="1" fill="#FF431A"></rect>
+    <rect x="1" y="1" height="1" width="1" fill="#0ECD2D"></rect>
+    <rect x="0" y="2" height="1" width="1" fill="#336CFF"></rect>
+    <rect x="1" y="2" height="1" width="1" fill="#1A1A1A"></rect>
+  </svg>
+  <h1><span>Incremental<br>Software</span></h1>
+</header>
+<main>
+  <p>Building a browser extension business is hard. We can help.</p>
+  <p><a href="mailto:contact@incremental.software">Email us</a> or <a href="https://calendly.com/dotproto">book a consultation</a>.</p>
+</main>
