@@ -1,10 +1,5 @@
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/CNAME");
-  eleventyConfig.addPassthroughCopy("src/images/");
-
-  eleventyConfig.addShortcode("copyrightYear", () => {
-    return new Date().getFullYear();
-  });
 
   return {
     dir: {
