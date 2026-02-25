@@ -1,4 +1,4 @@
-name: Build with Eleventy
+name: 11ty GH Pages Action
 on:
   push:
     branches:
@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@main
       - name: Build
-        uses: TartanLlama/actions-eleventy@master
+        uses: cjerrington/actions-eleventy@master
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
