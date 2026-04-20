@@ -1,81 +1,402 @@
----
-title: Incremental Software, LLC
-layout: layouts/pages/home.njk
-head: |-
-  <link rel="me" href="https://toot.cafe/@dotproto">
-css: |-
-  :root {
-    font-size: 16px;
-    --size-300: clamp(0.7rem, 0.66rem + 0.2vw, 0.8rem);
-    --size-400: clamp(0.88rem, 0.83rem + 0.24vw, 1rem);
-    --size-500: clamp(1.09rem, 1rem + 0.47vw, 1.33rem);
-    --size-600: clamp(1.37rem, 1.21rem + 0.8vw, 1.78rem);
-    --size-700: clamp(1.71rem, 1.45rem + 1.29vw, 2.37rem);
-    --size-800: clamp(2.14rem, 1.74rem + 1.99vw, 3.16rem);
-    --size-900: clamp(2.67rem, 2.07rem + 3vw, 4.21rem);
-    --size-1000: clamp(3.34rem, 2.45rem + 4.43vw, 5.61rem);
-  }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Incremental Software</title>
+<link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+<link rel="me" href="https://toot.cafe/@dotproto">
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
 
-  body {
-    margin: 0;
-    padding: 1rem;
-    padding: var(--size-600);
-    font-family: sans-serif;
-    font-size: var(--size-500);
-  }
-  header {
-    display: flex;
-    justify-content: center;
-    align-items: end;
-    gap: 4vmin;
-    margin-bottom: 10vmin;
-  }
-  #logo {
-    height: 40vmin;
-    min-width: calc(40vmin / 3 * 2);
-  }
-  main {
-    width: 93vmin;
-    margin: 0 auto;
-  }
-  h1 {
-    margin: 0;
-    padding: 0;
-    font-size: 11vmin;
-  }
-  h1 > span {
-    display: inline-block;
-  }
-  .link-wrapper {
-    all: unset;
-    margin-top: 10vmin;
-    display: flex;
-    justify-content: center;
-  }
-  .link {
-    all: unset;
-    padding: 0 var(--size-700);
-  }
-  .link:not(:last-child) {
-    border-right: 1px solid black;
-  }
-  a {
-    text-decoration: none;
-  }
-  a:hover {
-    text-decoration: underline;
-  }
----
-<header>
-  <svg id="logo" lang="en" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 2 3">
-    <rect x="0" y="0" height="1" width="1" fill="#FF431A"></rect>
-    <rect x="1" y="1" height="1" width="1" fill="#0ECD2D"></rect>
-    <rect x="0" y="2" height="1" width="1" fill="#336CFF"></rect>
-    <rect x="1" y="2" height="1" width="1" fill="#1A1A1A"></rect>
-  </svg>
-  <h1><span>Incremental<br>Software</span></h1>
+<!-- ── Navigation ──────────────────────────────────────────── -->
+<header id="site-nav">
+  <div class="nav-inner">
+    <a href="#/" class="nav-logo" data-route="#/">
+      <img src="/static/logo-lockup.svg" alt="Incremental Software" width="172" height="48">
+    </a>
+    <ul id="nav-links" class="nav-links">
+      <li><a href="#/approach" data-route="#/approach">Approach</a></li>
+      <li><a href="#/writing"  data-route="#/writing">Writing</a></li>
+      <li><a href="#/contact"  data-route="#/contact">Contact</a></li>
+      <li>
+        <a href="#/contact" class="btn btn-primary btn-sm" data-route="#/contact">
+          Start a conversation
+        </a>
+      </li>
+    </ul>
+    <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
 </header>
-<main>
-  <p>Building a browser extension business is hard. We can help.</p>
-  <p><a href="https://docs.google.com/forms/d/e/1FAIpQLScjyhRBopKZEZkzT98yRunqww01aXsZcsSMXXzLhgNcSxcDPQ/viewform?usp=publish-editor">Contact us</a> or <a href="https://calendar.app.google/8qMhNJo92CsEvL3P6">book an initial consultation</a>.</p>
-</main>
+
+<!-- ── Home page ────────────────────────────────────────────── -->
+<div id="page-home" class="page active">
+
+  <!-- Hero -->
+  <div id="hero">
+    <p class="eyebrow">EST. 2024 &middot; CONSULTANCY OF ONE</p>
+    <h1>
+      Browser extensions,<br>
+      built with the people<br>
+      who <em>shape the platform.</em>
+    </h1>
+    <p class="hero-lede">
+      A boutique consultancy for extension developers. Direct access to one of the most
+      experienced practitioners in the field — no account managers, no layers.
+    </p>
+    <div class="hero-ctas">
+      <a href="#/contact" class="btn btn-primary" data-route="#/contact">Start a conversation &rarr;</a>
+      <a href="#/approach" class="btn btn-secondary" data-route="#/approach">Read the approach</a>
+    </div>
+    <div class="credentials">
+      <div>
+        <div class="credential-label">Co-chair</div>
+        <div class="credential-value">WebExtensions Working Group</div>
+      </div>
+      <div>
+        <div class="credential-label">Formerly</div>
+        <div class="credential-value">Developer Advocate, Google</div>
+      </div>
+      <div>
+        <div class="credential-label">Formerly</div>
+        <div class="credential-value">Developer Advocate, Mozilla</div>
+      </div>
+      <div>
+        <div class="credential-label">Since</div>
+        <div class="credential-value">2024 &middot; Independent practice</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Services -->
+  <section id="services">
+    <div class="services-header">
+      <div>
+        <p class="eyebrow">WHAT WE DO</p>
+        <h2>Four things,<br>done well.</h2>
+      </div>
+      <p>
+        We take on a small number of engagements at a time. If what you need isn't one of these,
+        ask anyway — the answer is often "we know who to call."
+      </p>
+    </div>
+    <div class="services-list">
+      <div class="service-row">
+        <div class="service-num">01</div>
+        <div class="service-title">Platform consulting</div>
+        <div class="service-body">Deep technical work on your extension: architecture reviews, MV3 migrations, performance, security posture, platform API questions that nobody else has answers to.</div>
+        <div class="service-meta">Typical engagement &middot; 2–6 weeks</div>
+      </div>
+      <div class="service-row">
+        <div class="service-num">02</div>
+        <div class="service-title">Review &amp; store navigation</div>
+        <div class="service-body">Help preparing, submitting, and when necessary appealing reviews on the Chrome Web Store, Firefox Add-ons, and Edge Add-ons. We've been on both sides of the process.</div>
+        <div class="service-meta">Typical engagement &middot; Ad-hoc or retainer</div>
+      </div>
+      <div class="service-row">
+        <div class="service-num">03</div>
+        <div class="service-title">Standards advocacy</div>
+        <div class="service-body">Represent your extension's interests in the WebExtensions Working Group. Draft proposals, navigate cross-browser politics, turn product needs into platform features.</div>
+        <div class="service-meta">Typical engagement &middot; Retainer</div>
+      </div>
+      <div class="service-row">
+        <div class="service-num">04</div>
+        <div class="service-title">Diligence &amp; audits</div>
+        <div class="service-body">Acquirer-side and investor-side technical due diligence on extension businesses. Codebase assessment, platform risk, review-process exposure, maintainer health.</div>
+        <div class="service-meta">Typical engagement &middot; 1–3 weeks</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Case studies -->
+  <section id="case-studies">
+    <p class="eyebrow">SELECTED WORK</p>
+    <h2>A handful of recent engagements, named by permission.</h2>
+    <div class="cases-grid">
+      <article class="case-card">
+        <div class="case-tag">CASE &middot; 01</div>
+        <h3 class="case-title">Shipping MV3 without user regressions</h3>
+        <p class="case-body">A two-week consultation that moved 180k users to the new background model with no measurable drop in DAU.</p>
+        <div class="case-meta">Developer-tools extension &middot; Chrome &middot; 2025</div>
+      </article>
+      <article class="case-card">
+        <div class="case-tag">CASE &middot; 02</div>
+        <h3 class="case-title">Unblocking a stuck review</h3>
+        <p class="case-body">Three-month review standstill resolved in six days by reframing the permissions model and opening a direct line to the reviewers.</p>
+        <div class="case-meta">Privacy extension &middot; Firefox &middot; 2025</div>
+      </article>
+      <article class="case-card featured">
+        <div class="case-tag">FEATURED</div>
+        <h3 class="case-title">Adding an API to the platform itself</h3>
+        <p class="case-body">Authored the spec, shepherded it through the Working Group, and coordinated cross-vendor implementation. The extension no longer needs its desktop helper.</p>
+        <div class="case-meta">Productivity extension &middot; Cross-browser &middot; 2024–2025</div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Standards -->
+  <section id="standards">
+    <div class="standards-inner">
+      <div>
+        <p class="eyebrow">OPEN STANDARDS</p>
+        <h2>We don't just build on the platform. We help shape it.</h2>
+      </div>
+      <div>
+        <p>
+          Simeon is co-chair of the
+          <a href="https://www.w3.org/community/webextensions/">W3C WebExtensions Community Group</a>
+          — the venue where Chrome, Firefox, Safari, and Edge engineers agree on what extensions can do across browsers.
+        </p>
+        <p>
+          When a platform gap is blocking your product, we can do more than work around it.
+          We can take it to the group, write the proposal, and get it shipped.
+        </p>
+        <div class="standards-pills">
+          <span class="pill pill-ember">CG CO-CHAIR</span>
+          <span class="pill pill-ink">W3C</span>
+          <span class="pill pill-ink">2024 — PRESENT</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /page-home -->
+
+<!-- ── Approach page ─────────────────────────────────────────── -->
+<div id="page-approach" class="page">
+  <section>
+    <p class="eyebrow">THE APPROACH</p>
+    <h1>Small steps. Real expertise. No account managers.</h1>
+    <p class="approach-lede">
+      Most extension problems don't need a team. They need one person who has genuinely seen the edge
+      case before, and who can say what's worth doing and what isn't.
+    </p>
+    <div class="approach-body">
+      <p>
+        Incremental Software is deliberately a practice of one. When you hire us, you're hiring
+        <strong>Simeon Vincent</strong> — co-chair of the W3C WebExtensions Community Group, formerly
+        Developer Advocate for Chrome extensions at Google and for add-ons at Mozilla.
+        No pod, no strategy deck, no handoff.
+      </p>
+      <h2>How an engagement starts</h2>
+      <p>
+        A 30-minute call. You describe what you're building, what's stuck, and what "done" would look like.
+        We'll tell you whether we're the right fit within a day, and if we are, scope a two-to-six-week
+        engagement with a fixed fee.
+      </p>
+      <h2>What you get</h2>
+      <p>
+        A written technical brief, as much pairing time as the problem needs, code reviews, and where
+        relevant, direct outreach to the people at Google, Mozilla, Apple, and Microsoft who can move
+        your issue along. What you don't get: deliverables-as-slide-decks.
+      </p>
+      <p>
+        Most of our work is under NDA and doesn't appear on this site. The
+        <a href="#/" data-route="#/">selected work</a> section is a small, permissioned sample.
+      </p>
+    </div>
+  </section>
+
+  <!-- Reuse standards section -->
+  <section id="standards-approach" style="background:var(--ink-bg);color:var(--on-ink-900);padding:96px var(--sp-6);">
+    <div class="standards-inner">
+      <div>
+        <p class="eyebrow" style="color:var(--ember-500);">OPEN STANDARDS</p>
+        <h2 style="color:var(--on-ink-900);">We don't just build on the platform. We help shape it.</h2>
+      </div>
+      <div>
+        <p style="color:var(--on-ink-500);">
+          Simeon is co-chair of the
+          <a href="https://www.w3.org/community/webextensions/" style="color:var(--ember-500);">W3C WebExtensions Community Group</a>
+          — the venue where Chrome, Firefox, Safari, and Edge engineers agree on what extensions can do across browsers.
+        </p>
+        <p style="color:var(--on-ink-500);">
+          When a platform gap is blocking your product, we can do more than work around it.
+          We can take it to the group, write the proposal, and get it shipped.
+        </p>
+        <div class="standards-pills">
+          <span class="pill pill-ember">CG CO-CHAIR</span>
+          <span class="pill pill-ink">W3C</span>
+          <span class="pill pill-ink">2024 — PRESENT</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</div><!-- /page-approach -->
+
+<!-- ── Writing page ──────────────────────────────────────────── -->
+<div id="page-writing" class="page">
+  <section>
+    <p class="eyebrow">WRITING</p>
+    <h2>Notes from the platform.</h2>
+    <div class="writing-filters">
+      <button class="filter-btn active" data-tag="ALL">All</button>
+      <button class="filter-btn" data-tag="MV3">MV3</button>
+      <button class="filter-btn" data-tag="REVIEW">Review</button>
+      <button class="filter-btn" data-tag="STANDARDS">Standards</button>
+      <button class="filter-btn" data-tag="ARCHITECTURE">Architecture</button>
+    </div>
+    <div id="posts-list">
+      <a href="#" class="post-row" data-tag="MV3" onclick="return false;">
+        <div class="post-date">2026-03-14</div>
+        <div><span class="pill pill-neutral">MV3</span></div>
+        <div class="post-title">What "background script" actually means in 2026</div>
+        <div class="post-read">8 min &rarr;</div>
+      </a>
+      <a href="#" class="post-row" data-tag="REVIEW" onclick="return false;">
+        <div class="post-date">2026-02-02</div>
+        <div><span class="pill pill-neutral">REVIEW</span></div>
+        <div class="post-title">A checklist for clean Chrome Web Store submissions</div>
+        <div class="post-read">6 min &rarr;</div>
+      </a>
+      <a href="#" class="post-row" data-tag="STANDARDS" onclick="return false;">
+        <div class="post-date">2025-12-10</div>
+        <div><span class="pill pill-neutral">STANDARDS</span></div>
+        <div class="post-title">How a single permissions API change took 14 months</div>
+        <div class="post-read">12 min &rarr;</div>
+      </a>
+      <a href="#" class="post-row" data-tag="MV3" onclick="return false;">
+        <div class="post-date">2025-11-01</div>
+        <div><span class="pill pill-neutral">MV3</span></div>
+        <div class="post-title">Service workers, message ports, and the illusion of persistence</div>
+        <div class="post-read">10 min &rarr;</div>
+      </a>
+      <a href="#" class="post-row" data-tag="REVIEW" onclick="return false;">
+        <div class="post-date">2025-09-20</div>
+        <div><span class="pill pill-neutral">REVIEW</span></div>
+        <div class="post-title">The three questions every reviewer is really asking</div>
+        <div class="post-read">5 min &rarr;</div>
+      </a>
+      <a href="#" class="post-row" data-tag="ARCHITECTURE" onclick="return false;">
+        <div class="post-date">2025-08-01</div>
+        <div><span class="pill pill-neutral">ARCHITECTURE</span></div>
+        <div class="post-title">When to use declarativeNetRequest (and when not to)</div>
+        <div class="post-read">9 min &rarr;</div>
+      </a>
+    </div>
+  </section>
+</div><!-- /page-writing -->
+
+<!-- ── Contact page ──────────────────────────────────────────── -->
+<div id="page-contact" class="page">
+  <section>
+    <div class="contact-grid">
+      <div>
+        <p class="eyebrow">GET IN TOUCH</p>
+        <h2>Start a conversation.</h2>
+        <p>
+          Tell us a little about what you're working on and what you're stuck on.
+          We'll reply within a business day, usually faster.
+        </p>
+        <div class="contact-actions">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLScjyhRBopKZEZkzT98yRunqww01aXsZcsSMXXzLhgNcSxcDPQ/viewform"
+             class="btn btn-primary" target="_blank" rel="noopener">
+            Open contact form &rarr;
+          </a>
+          <a href="https://calendar.app.google/8qMhNJo92CsEvL3P6"
+             class="btn btn-secondary" target="_blank" rel="noopener">
+            Book a consultation
+          </a>
+        </div>
+        <div class="contact-alt">
+          <div class="contact-alt-label">Or email directly</div>
+          <div class="contact-alt-value">
+            <a href="mailto:hello@incremental.software">hello@incremental.software</a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div id="contact-form-wrap">
+          <form id="contact-form" class="form-stack" novalidate>
+            <div class="form-row">
+              <label class="field">
+                <span class="field-label">Name</span>
+                <input type="text" id="field-name" data-required="Required." autocomplete="name">
+                <span class="field-error" id="field-name-error"></span>
+              </label>
+              <label class="field">
+                <span class="field-label">Email</span>
+                <input type="email" id="field-email" data-required="Required." autocomplete="email">
+                <span class="field-error" id="field-email-error"></span>
+              </label>
+            </div>
+            <label class="field">
+              <span class="field-label">Organization (optional)</span>
+              <input type="text" id="field-org" autocomplete="organization">
+            </label>
+            <label class="field">
+              <span class="field-label">What are you working on?</span>
+              <textarea id="field-message" data-required="Tell us a bit about what you're working on."></textarea>
+              <span class="field-error" id="field-message-error"></span>
+            </label>
+            <div class="form-footer">
+              <button type="submit" class="btn btn-primary">Send message &rarr;</button>
+            </div>
+          </form>
+        </div>
+        <div id="contact-success" hidden>
+          <p class="eyebrow" style="color:var(--moss-800);">MESSAGE RECEIVED</p>
+          <h2>Thanks — we'll be in touch within a business day.</h2>
+          <p>
+            If it's urgent (a live review issue, for instance), mention that in your note
+            and we'll move faster.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div><!-- /page-contact -->
+
+<!-- ── Footer ────────────────────────────────────────────────── -->
+<footer id="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="#/" data-route="#/">
+        <img src="/static/logo-lockup.svg" alt="Incremental Software" width="180" height="50">
+      </a>
+      <p>Making web extensions for everyone. Boutique consultancy for extension developers, led by Simeon Vincent.</p>
+    </div>
+    <div>
+      <div class="footer-col-head">Work</div>
+      <ul class="footer-col-links">
+        <li><a href="#/approach" data-route="#/approach">Approach</a></li>
+        <li><a href="#/"        data-route="#/">Case studies</a></li>
+        <li><a href="#/approach" data-route="#/approach">Standards</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-head">Writing</div>
+      <ul class="footer-col-links">
+        <li><a href="#/writing" data-route="#/writing">All posts</a></li>
+        <li><a href="#/writing" data-route="#/writing">MV3 series</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-head">Contact</div>
+      <ul class="footer-col-links">
+        <li><a href="#/contact" data-route="#/contact">Start a conversation</a></li>
+        <li><span class="mono-item">hello@incremental.software</span></li>
+        <li>
+          <a href="https://toot.cafe/@dotproto" rel="me" target="_blank" rel="noopener">
+            @dotproto@toot.cafe
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span id="copyright"></span>
+    <span>Making web extensions for everyone.</span>
+  </div>
+</footer>
+
+<script src="/static/script.js"></script>
+<script>
+  document.getElementById('copyright').textContent =
+    '\u00A9 ' + new Date().getFullYear() + ' INCREMENTAL SOFTWARE, LLC \u00B7 DELAWARE';
+</script>
+</body>
+</html>
