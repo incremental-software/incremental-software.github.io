@@ -591,7 +591,8 @@ a:hover {
   font-family: var(--font-sans);
   font-size: 1.125rem;
   line-height: var(--lh-body);
-  color: rgba(251, 250, 246, 0.7); /* --on-ink-500 approximation */
+  color: var(--paper-100); /* Fallback for UAs that don't support relative colors */
+  color: rgb(from var(--ink-500) calc(255 - r) calc(255 - g) calc(255 - b) ); /* inverted */
 }
 
 .standards__body + .standards__body {
