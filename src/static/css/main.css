@@ -1,8 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,500&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
-
-/* ── Custom properties ──────────────────────────────────────── */
+/* -- Custom properties ----------------------------------------------------- */
 :root {
   /* Palette — raw color tokens */
+  --primary-red:    #FF2C2C;
+  --primary-yellow: #FFC72C;
+  --primary-green:  #14AE5C;
+  --primary-blue:   #58A9FF;
+  --accent-red:     oklch(from var(--primary-red) calc(l * .75) c h);
+  --accent-yellow:  oklch(from var(--primary-yellow) calc(l * .75) c h);
+  --accent-green:   oklch(from var(--primary-green) calc(l * .75) c h);
+  --accent-blue:    oklch(from var(--primary-blue) calc(l * .75) c h);
+
+  --paper-0:   #fff;
   --paper-50:  #fbfaf6;
   --paper-100: #f4f1e8;
   --paper-200: #e8e3d3;
@@ -23,15 +31,16 @@
   --moss-100: #dde8e1;
 
   /* Semantic tokens */
-  --bg:         var(--paper-50);
+  --bg:         var(--paper-0);
   --bg-raised:  #ffffff;
-  --bg-sunken:  var(--paper-100);
+  --bg-sunken:  var(--paper-50);
   --bg-inverse: var(--ink-900);
 
-  --fg:            var(--ink-900);
-  --fg-muted:      var(--ink-500);
-  --fg-subtle:     var(--ink-400);
-  --fg-on-inverse: var(--paper-50);
+  --fg:               var(--ink-900);
+  --fg-muted:         var(--ink-500);
+  --fg-subtle:        var(--ink-400);
+  --fg-inverse:       rgb(from var(--fg) calc(255 - r) calc(255 - g) calc(255 - b) );
+  --fg-muted-inverse: rgb(from var(--ink-700) calc(255 - r) calc(255 - g) calc(255 - b) );
 
   --accent:       var(--ember-600);
   --accent-hover: var(--ember-500);
@@ -43,8 +52,8 @@
   --focus-ring: var(--ember-600);
 
   /* Typography */
-  --font-serif: 'Source Serif 4', 'Iowan Old Style', Georgia, serif;
-  --font-sans:  'Inter Tight', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-serif: 'Stack Sans Headline', Georgia, serif;
+  --font-sans:  'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono:  'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
 
   --fs-display: clamp(2.75rem, 5vw + 1.5rem, 5.75rem);
@@ -75,11 +84,15 @@
   --sp-8:  4rem;      /* 64px */
   --sp-9:  6rem;      /* 96px */
   --sp-10: 8rem;      /* 128px */
+  --sp-11: 10rem;     /* 160px */
+
+  --new-sp-factor: calc();
+  --new-sp-1: calc();
 
   /* Layout */
-  --max-width:  75rem;  /* 1200px */
-  --gutter:     2rem;   /* 32px */
-  --section-v:  var(--sp-9);
+  --max-width:  75rem;
+  --gutter:     var(--sp-6);
+  --section-v:  var(--sp-10);
 
   /* Radius */
   --radius-1:   2px;
@@ -96,7 +109,7 @@
   --dur-base: 200ms;
 }
 
-/* ── Reset & base ─────────────────────────────────────────── */
+/* -- Reset & base ---------------------------------------------------------- */
 *,
 *::before,
 *::after {
@@ -144,7 +157,6 @@ ol {
 }
 
 a {
-  color: var(--accent-text);
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 0.18em;
@@ -168,18 +180,28 @@ a:hover {
   border-radius: var(--radius-1);
 }
 
-/* ── Utility: eyebrow label ────────────────────────────────── */
+/* -- Utility: section heading ---------------------------------------------- */
+.heading {
+  font-family: var(--font-serif);
+  font-size: var(--fs-h2);
+  font-weight: 500;
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tracking-tight);
+  font-variation-settings: 'opsz' 60;
+}
+
+/* -- Utility: eyebrow label ------------------------------------------------ */
 .eyebrow {
-  font-family: var(--font-mono);
+  font-family: var(--font-serif);
   font-size: var(--fs-micro);
   font-weight: 500;
   letter-spacing: var(--tracking-caps);
   text-transform: uppercase;
-  color: var(--fg-muted);
+  color: var(--primary-red);
   line-height: 1.4;
 }
 
-/* ── Utility: button ───────────────────────────────────────── */
+/* -- Utility: button ------------------------------------------------------- */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -187,31 +209,28 @@ a:hover {
   font-family: var(--font-sans);
   font-weight: 600;
   font-size: var(--fs-small);
-  line-height: 1.2;
   letter-spacing: -0.005em;
   padding: calc(var(--sp-3) - 0.125rem) 1.25rem; /* 11px 20px */
-  border-radius: var(--radius-1);
+  border-radius: var(--sp-2);
   cursor: pointer;
   text-decoration: none;
   white-space: nowrap;
-  border: none;
   transition: background var(--dur-fast) var(--ease-out),
               color var(--dur-fast) var(--ease-out);
 }
 
 .btn--primary {
-  background: var(--accent);
-  color: var(--paper-50);
-  border: 1px solid var(--border-ink);
-  box-shadow: var(--shadow-print);
+  background: var(--primary-green);
+  color: var(--paper-0);
+  border: 1px solid var(--accent-green);
+  text-shadow: 0px 0.025rem 0.3rem rgba(0 0 0 / 0.5);
 }
 .btn--primary:hover {
-  background: var(--accent-hover);
-  color: var(--paper-50);
+  background: var(--primary-green);
   text-decoration: none;
 }
 .btn--primary:active {
-  background: var(--accent-press);
+  background: var(--primary-green);
 }
 
 .btn--secondary {
@@ -230,7 +249,7 @@ a:hover {
   padding: 0.375rem 0.75rem;
 }
 
-/* ── Navigation ────────────────────────────────────────────── */
+/* -- Navigation ------------------------------------------------------------ */
 .nav {
   position: sticky;
   top: 0;
@@ -245,7 +264,6 @@ a:hover {
 }
 
 .nav--scrolled {
-  background: rgba(251, 250, 246, 0.88);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-bottom-color: var(--border);
@@ -275,7 +293,7 @@ a:hover {
 }
 
 .nav__logo-mark {
-  height: 30px;
+  height: var(--sp-7);
   width: auto;
   flex-shrink: 0;
 }
@@ -283,7 +301,7 @@ a:hover {
 .nav__logo-wordmark {
   display: flex;
   flex-direction: column;
-  line-height: 1.1;
+  line-height: 0.8;
   gap: 0;
 }
 
@@ -292,7 +310,7 @@ a:hover {
   font-size: 1.175rem;
   font-weight: 600;
   letter-spacing: var(--tracking-tight);
-  font-variation-settings: 'opsz' 60;
+  font-variation-settings: 'opsz' 16;
   color: var(--fg);
 }
 
@@ -331,7 +349,7 @@ a:hover {
   display: none;
 }
 
-/* ── Hero ──────────────────────────────────────────────────── */
+/* -- Hero ------------------------------------------------------------------ */
 .hero {
   padding: calc(var(--sp-7) + var(--sp-5)) var(--gutter) var(--section-v);
 }
@@ -342,12 +360,7 @@ a:hover {
 }
 
 .hero__heading {
-  font-family: var(--font-serif);
   font-size: var(--fs-display);
-  font-weight: 500;
-  line-height: var(--lh-tight);
-  letter-spacing: var(--tracking-tight);
-  font-variation-settings: 'opsz' 60;
   color: var(--fg);
   margin: 0 0 var(--sp-6);
   max-width: 61.25rem;
@@ -355,8 +368,8 @@ a:hover {
 }
 
 .hero__heading-accent {
-  color: var(--accent-text);
-  font-style: italic;
+  color: var(--primary-red);
+  font-style: normal;
   font-variation-settings: 'opsz' 60;
 }
 
@@ -377,12 +390,10 @@ a:hover {
   flex-wrap: wrap;
 }
 
-/* ── Services ──────────────────────────────────────────────── */
+/* -- Services -------------------------------------------------------------- */
 .services {
   padding: var(--section-v) var(--gutter);
   background: var(--bg-sunken);
-  border-top: 1px solid var(--border-ink);
-  border-bottom: 1px solid var(--border-ink);
 }
 
 .services__inner {
@@ -392,10 +403,10 @@ a:hover {
 
 .services__header {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr 1fr;
   gap: var(--sp-8);
-  margin-bottom: calc(var(--sp-7) + var(--sp-2)); /* 56px */
-  align-items: end;
+  margin-bottom: var(--sp-8);
+  align-items: start;
 }
 
 .services__header-eyebrow {
@@ -403,12 +414,6 @@ a:hover {
 }
 
 .services__heading {
-  font-family: var(--font-serif);
-  font-size: var(--fs-h2);
-  font-weight: 500;
-  line-height: 1.05;
-  letter-spacing: -0.02em;
-  font-variation-settings: 'opsz' 60;
   color: var(--fg);
 }
 
@@ -418,7 +423,6 @@ a:hover {
   line-height: var(--lh-body);
   color: var(--fg-muted);
   max-width: 35rem;
-  align-self: end;
 }
 
 .services__list {
@@ -462,7 +466,7 @@ a:hover {
   color: var(--fg-muted);
 }
 
-.services__item-meta {
+.services__item-estimate {
   font-family: var(--font-mono);
   font-size: 0.75rem;
   color: var(--fg-subtle);
@@ -470,7 +474,7 @@ a:hover {
   line-height: 1.5;
 }
 
-/* ── Work (case studies) ───────────────────────────────────── */
+/* -- Work (case studies) --------------------------------------------------- */
 .work {
   padding: var(--section-v) var(--gutter);
 }
@@ -485,12 +489,6 @@ a:hover {
 }
 
 .work__heading {
-  font-family: var(--font-serif);
-  font-size: var(--fs-h2);
-  font-weight: 500;
-  line-height: 1.05;
-  letter-spacing: -0.02em;
-  font-variation-settings: 'opsz' 60;
   color: var(--fg);
   margin: 0 0 var(--sp-8);
   max-width: 47.5rem;
@@ -502,7 +500,7 @@ a:hover {
   gap: var(--sp-5);
 }
 
-/* ── Case card ─────────────────────────────────────────────── */
+/* -- Case card ------------------------------------------------------------- */
 .case-card {
   background: var(--bg-raised);
   border: 1px solid var(--border);
@@ -557,10 +555,8 @@ a:hover {
   border-top: 1px solid var(--border);
 }
 
-/* ── Standards (dark section) ──────────────────────────────── */
+/* -- Standards (dark section) ---------------------------------------------- */
 .standards {
-  background: var(--bg-inverse);
-  color: var(--fg-on-inverse);
   padding: var(--section-v) var(--gutter);
 }
 
@@ -574,26 +570,14 @@ a:hover {
 }
 
 .standards__eyebrow {
-  color: var(--ember-500);
+  color: var(--primary-red);
   margin-bottom: var(--sp-4);
-}
-
-.standards__heading {
-  font-family: var(--font-serif);
-  font-size: var(--fs-h2-lg);
-  font-weight: 500;
-  line-height: 1.02;
-  letter-spacing: var(--tracking-tight);
-  font-variation-settings: 'opsz' 60;
-  color: var(--fg-on-inverse);
 }
 
 .standards__body {
   font-family: var(--font-sans);
   font-size: 1.125rem;
   line-height: var(--lh-body);
-  color: var(--paper-100); /* Fallback for UAs that don't support relative colors */
-  color: rgb(from var(--ink-500) calc(255 - r) calc(255 - g) calc(255 - b) ); /* inverted */
 }
 
 .standards__body + .standards__body {
@@ -609,9 +593,11 @@ a:hover {
   color: var(--ember-400); text-decoration-thickness: 2px;
 }
 
-/* ── Contact ───────────────────────────────────────────────── */
+/* -- Contact --------------------------------------------------------------- */
 .contact {
+  background: var(--bg-inverse);
   padding: var(--section-v) var(--gutter);
+  color: var(--fg-muted-inverse);
 }
 
 .contact__inner {
@@ -619,7 +605,7 @@ a:hover {
   margin-inline: auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--sp-10);
+  gap: var(--sp-8);
   align-items: start;
 }
 
@@ -628,13 +614,7 @@ a:hover {
 }
 
 .contact__heading {
-  font-family: var(--font-serif);
-  font-size: var(--fs-h2-lg);
-  font-weight: 500;
-  line-height: 1.02;
-  letter-spacing: var(--tracking-tight);
-  font-variation-settings: 'opsz' 60;
-  color: var(--fg);
+  color: var(--fg-inverse);
   margin: 0 0 var(--sp-5);
 }
 
@@ -642,7 +622,6 @@ a:hover {
   font-family: var(--font-sans);
   font-size: var(--fs-body);
   line-height: var(--lh-body);
-  color: var(--fg-muted);
   text-wrap: pretty;
 }
 
@@ -651,74 +630,23 @@ a:hover {
   flex-direction: column;
   gap: var(--sp-4);
   justify-content: flex-start;
-  padding-top: calc(var(--fs-micro) + var(--sp-4)); /* optical alignment with heading */
 }
 
 .contact__action-note {
   font-family: var(--font-sans);
   font-size: var(--fs-small);
   line-height: var(--lh-body);
-  color: var(--fg-muted);
   padding-top: var(--sp-3);
-  border-top: 1px solid var(--border);
 }
 
-/* ── Footer ────────────────────────────────────────────────── */
+/* -- Footer ---------------------------------------------------------------- */
 .footer {
-  background: var(--bg-sunken);
   border-top: 1px solid var(--border-ink);
-  padding: var(--sp-8) var(--gutter) var(--sp-7);
-}
-
-.footer__inner {
-  max-width: var(--max-width);
-  margin-inline: auto;
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: var(--sp-8);
-}
-
-.footer__brand-blurb {
-  font-family: var(--font-sans);
-  font-size: var(--fs-small);
-  line-height: var(--lh-body);
-  color: var(--fg-muted);
-  margin-top: var(--sp-5);
-  max-width: 20rem;
-}
-
-.footer__col-heading {
-  font-family: var(--font-mono);
-  font-size: 0.6875rem;
-  letter-spacing: var(--tracking-caps);
-  text-transform: uppercase;
-  color: var(--fg-muted);
-  margin-bottom: var(--sp-4);
-}
-
-.footer__col-links {
-  display: flex;
-  flex-direction: column;
-  gap: 0.625rem;
-}
-
-.footer__col-link {
-  font-family: var(--font-sans);
-  font-size: var(--fs-small);
-  color: var(--fg);
-  text-decoration: none;
-  transition: color var(--dur-fast) var(--ease-out);
-}
-.footer__col-link:hover {
-  color: var(--accent-text);
-  text-decoration: none;
+  padding: var(--sp-8) var(--gutter);
 }
 
 .footer__bottom {
   max-width: var(--max-width);
-  margin: var(--sp-8) auto 0;
-  padding-top: var(--sp-5);
-  border-top: 1px solid var(--border);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -733,13 +661,13 @@ a:hover {
   letter-spacing: 0.04em;
 }
 
-/* ── Logo mark SVG fill — set via CSS so both light instances match fg ── */
+/* -- Logo mark SVG fill — set via CSS so both light instances match fg -- */
 .nav__logo-mark path,
 .footer__logo-mark path {
   fill: var(--fg);
 }
 
-/* ── Media queries — tablet ────────────────────────────────── */
+/* -- Media queries — tablet ------------------------------------------------ */
 @media (max-width: 899px) {
   :root {
     --gutter: 1.5rem;
@@ -791,7 +719,7 @@ a:hover {
   /* Services header: single column */
   .services__header {
     grid-template-columns: 1fr;
-    gap: var(--sp-4);
+    gap: var(--sp-8);
     margin-bottom: var(--sp-6);
   }
 
@@ -812,7 +740,7 @@ a:hover {
     grid-row: 2;
     grid-column: 1 / -1;
   }
-  .services__item-meta  {
+  .services__item-estimate  {
     grid-row: 3;
     grid-column: 1 / -1;
     color: var(--fg-subtle);
@@ -849,7 +777,7 @@ a:hover {
   }
 }
 
-/* ── Media queries — phone ─────────────────────────────────── */
+/* -- Media queries — phone ------------------------------------------------- */
 @media (max-width: 639px) {
   :root {
     --gutter: 1rem;

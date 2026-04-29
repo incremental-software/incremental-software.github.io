@@ -2,9 +2,13 @@
 title: Incremental Software, LLC
 layout: layouts/pages/home.njk
 head: |-
-  <link rel="me" href="https://toot.cafe/@dotproto">
-  <link rel="icon" href="/static/img/logo-mark.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&family=Stack+Sans+Headline:wght@200..700&display=block" rel="stylesheet">
+
   <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/img/logo-mark.svg" type="image/svg+xml">
+  <link rel="me" href="https://toot.cafe/@dotproto">
 ---
 <header class="nav" id="nav" role="banner">
   <div class="nav__inner">
@@ -58,14 +62,14 @@ head: |-
   <!-- -- Hero ----------------------------------------------- -->
   <section class="hero">
     <div class="hero__inner">
-      <h1 class="hero__heading">
+      <h1 class="heading hero__heading">
         Browser extensions,<br>
-        built with the people<br>
-        who <em class="hero__heading-accent">shape the platform.</em>
+        built by people who<br>
+        <em class="hero__heading-accent">help shape the platform</em>.
       </h1>
       <p class="hero__lede">
         A boutique consultancy for extension developers. Direct access to one of the most
-        experienced practitioners in the field — no account managers, no layers.
+        experienced practitioners in the field. No account managers, no layers.
       </p>
       <div class="hero__actions">
         <a href="https://docs.google.com/forms/d/e/1FAIpQLScjyhRBopKZEZkzT98yRunqww01aXsZcsSMXXzLhgNcSxcDPQ/viewform" class="btn btn--primary">Start a conversation &#x2192;</a>
@@ -81,11 +85,11 @@ head: |-
       <div class="services__header">
         <div>
           <p class="eyebrow services__header-eyebrow">What we do</p>
-          <h2 class="services__heading">Four things,<br>done well.</h2>
+          <h2 class="heading services__heading">Four things, done well.</h2>
         </div>
         <p class="services__intro">
           We take on a small number of engagements at a time. If what you need isn't
-          one of these, ask anyway — the answer is often "we know who to call."
+          one of these, ask anyway. We usually know who to call.
         </p>
       </div>
 
@@ -95,61 +99,29 @@ head: |-
           <span class="services__item-num">01</span>
           <h3 class="services__item-title">Platform consulting</h3>
           <p class="services__item-body">Deep technical work on your extension: architecture reviews, MV3 migrations, performance, security posture, platform API questions that nobody else has answers to.</p>
-          <span class="services__item-meta">Typical engagement · 2–6 weeks</span>
+          <span class="services__item-estimate">Typical engagement<br>2–6 weeks</span>
         </div>
 
         <div class="services__item">
           <span class="services__item-num">02</span>
-          <h3 class="services__item-title">Review &amp; store navigation</h3>
+          <h3 class="services__item-title">Store policies &amp; review</h3>
           <p class="services__item-body">Help preparing, submitting, and when necessary appealing reviews on the Chrome Web Store, Firefox Add-ons, and Edge Add-ons. We've been on both sides of the process.</p>
-          <span class="services__item-meta">Typical engagement · Ad-hoc or retainer</span>
+          <span class="services__item-estimate">Typical engagement<br>Ad-hoc or retainer</span>
         </div>
 
         <div class="services__item">
           <span class="services__item-num">03</span>
           <h3 class="services__item-title">Standards advocacy</h3>
           <p class="services__item-body">Represent your extension's interests in the WebExtensions Working Group. Draft proposals, navigate cross-browser politics, turn product needs into platform features.</p>
-          <span class="services__item-meta">Typical engagement · Retainer</span>
+          <span class="services__item-estimate">Typical engagement<br>Retainer</span>
         </div>
 
         <div class="services__item">
           <span class="services__item-num">04</span>
           <h3 class="services__item-title">Diligence &amp; audits</h3>
           <p class="services__item-body">Acquirer-side and investor-side technical due diligence on extension businesses. Codebase assessment, platform risk, review-process exposure, maintainer health.</p>
-          <span class="services__item-meta">Typical engagement · 1–3 weeks</span>
+          <span class="services__item-estimate">Typical engagement<br>1–3 weeks</span>
         </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- -- Selected work --------------------------------------- -->
-  <section class="work">
-    <div class="work__inner">
-      <p class="eyebrow work__eyebrow">Selected work</p>
-      <h2 class="work__heading">A handful of recent engagements, named by permission.</h2>
-      <div class="work__grid">
-
-        <article class="case-card">
-          <p class="case-card__tag">CASE · 01</p>
-          <h3 class="case-card__title">Shipping MV3 without user regressions</h3>
-          <p class="case-card__body">A two-week consultation that moved 180k users to the new background model with no measurable drop in DAU.</p>
-          <p class="case-card__meta">Developer-tools extension · Chrome · 2025</p>
-        </article>
-
-        <article class="case-card">
-          <p class="case-card__tag">CASE · 02</p>
-          <h3 class="case-card__title">Unblocking a stuck review</h3>
-          <p class="case-card__body">Three-month review standstill resolved in six days by reframing the permissions model and opening a direct line to the reviewers.</p>
-          <p class="case-card__meta">Privacy extension · Firefox · 2025</p>
-        </article>
-
-        <article class="case-card case-card--featured">
-          <p class="case-card__tag">FEATURED</p>
-          <h3 class="case-card__title">Adding an API to the platform itself</h3>
-          <p class="case-card__body">Authored the spec, shepherded it through the Working Group, and coordinated cross-vendor implementation. The extension no longer needs its desktop helper.</p>
-          <p class="case-card__meta">Productivity extension · Cross-browser · 2024–2025</p>
-        </article>
 
       </div>
     </div>
@@ -161,15 +133,15 @@ head: |-
 
       <div>
         <p class="eyebrow standards__eyebrow">Open standards</p>
-        <h2 class="standards__heading">We don't just build on the platform. We help shape it.</h2>
+        <h2 class="heading standards__heading">We don't just build on the platform. We help shape it.</h2>
       </div>
 
       <div>
         <p class="standards__body">
-          Simeon is co-chair of the <a href="https://www.w3.org/community/webextensions/">W3C WebExtensions Community Group</a> — the venue where Chrome, Firefox, Safari, and Edge engineers agree on what extensions can do across browsers.
+          Simeon has worked directly on multiple major web browsers and is a founding member of the WebExtensions Community Group, the venue where browser engineers from all major browsers and extension developers debate and agree on the future of cross-browser extensions.
         </p>
         <p class="standards__body">
-          When a platform gap is blocking your product, we can do more than work around it. We can take it to the group, write the proposal, and get it shipped.
+          When a platform gap is blocking your product, we can do more than work around it. We can take it to the group, create proposals, build consensus, and contribute changes directly to browser engines.
         </p>
       </div>
 
@@ -182,7 +154,7 @@ head: |-
 
       <div>
         <p class="eyebrow contact__eyebrow">Get in touch</p>
-        <h2 class="contact__heading">Start a conversation.</h2>
+        <h2 class="heading contact__heading">Start a conversation.</h2>
         <p class="contact__lede">
           Tell us a little about what you're working on and what you're stuck on.
           We'll reply within a business day, usually faster.
@@ -191,9 +163,9 @@ head: |-
 
       <div class="contact__actions">
         <a href="https://docs.google.com/forms/d/e/1FAIpQLScjyhRBopKZEZkzT98yRunqww01aXsZcsSMXXzLhgNcSxcDPQ/viewform" class="btn btn--primary">Send us a message &#x2192;</a>
-        <a href="https://calendar.app.google/8qMhNJo92CsEvL3P6" class="btn btn--secondary">Book a free 30-minute call</a>
+        <a href="https://calendar.app.google/8qMhNJo92CsEvL3P6" class="btn btn--secondary">Book a 30-minute call</a>
         <p class="contact__action-note">
-          Not sure if we're the right fit? The call is free and there's no obligation. We'll tell you honestly whether we can help.
+          Not sure if we're the right fit? Schedule a free, no obligation call. We'll tell you honestly whether we can help.
         </p>
       </div>
 
@@ -204,66 +176,9 @@ head: |-
 
 <!-- -- Footer ------------------------------------------------- -->
 <footer class="footer">
-  <div class="footer__inner">
-
-    <div class="footer__brand">
-      <a href="/" class="nav__brand" aria-label="Incremental Software — home">
-        <svg class="footer__logo-mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 377" aria-hidden="true" focusable="false">
-          <defs>
-            <clipPath id="logo-clip-footer">
-              <rect x="47.24409449" y="2574" width="1645.75590551" height="1301"/>
-            </clipPath>
-          </defs>
-          <g transform="translate(0,-2574)">
-            <g transform="matrix(0.315921,0,0,0.289777,-14.92541,1828.113759)">
-              <g clip-path="url(#logo-clip-footer)">
-                <g transform="matrix(3.165347,0,0,3.450928,-7130.092041,-686.719731)">
-                  <path fill-rule="evenodd" d="M2784.77184342,1037.61692448C2786.41475226,1038.71219312 2787.40157325,1040.55607958 2787.4015748,1042.5306081C2787.4015748,1070.73229064 2787.4015748,1279.03589417 2787.4015748,1316.92914987C2787.40157056,1318.49538916 2786.77938028,1319.99747767 2785.67187875,1321.10497299C2784.56437723,1322.21246832 2783.06228524,1322.83465019 2781.49604595,1322.83464567C2736.48826242,1322.83464567 2448.47471632,1322.83464567 2413.02490937,1322.83464567C2410.69311292,1322.83464572 2408.41348956,1322.14442973 2406.47331931,1320.85097928C2387.88099539,1308.45609666 2287.89365647,1241.79787072 2270.34626682,1230.09961095C2268.70335797,1229.00434231 2267.71653699,1227.16045585 2267.71653543,1225.18592733C2267.71653543,1196.98424479 2267.71653543,988.68064126 2267.71653543,950.78738557C2267.71653968,949.22114627 2268.33872996,947.71905777 2269.44623148,946.61156244C2270.55373301,945.50406711 2272.055825,944.88188524 2273.62206429,944.88188976C2318.62984781,944.88188976 2606.64339391,944.88188976 2642.09320087,944.88188976C2644.42499729,944.88188971 2646.70462063,945.57210569 2648.64479086,946.86555611C2667.2371146,959.26043861 2767.22445335,1025.91866444 2784.77184342,1037.61692448ZM2456.69291339,1039.37007874C2456.69291339,1039.37007874 2575.05273471,1118.27662629 2595.44969727,1131.87460133C2597.38986607,1133.16805081 2599.66948752,1133.85826676 2602.00128222,1133.85826772C2624.01096918,1133.85826772 2740.15748031,1133.85826772 2740.15748031,1133.85826772C2740.15748031,1133.85826772 2621.79765899,1054.95172017 2601.40069643,1041.35374513C2599.46052763,1040.06029565 2597.18090618,1039.37007969 2594.84911148,1039.37007874C2572.83942452,1039.37007874 2456.69291339,1039.37007874 2456.69291339,1039.37007874ZM2314.96062992,1133.85826772C2314.96062992,1133.85826772 2433.32045125,1212.76481527 2453.7174138,1226.3627903C2455.65758261,1227.65623979 2457.93720405,1228.34645574 2460.26899876,1228.34645669C2482.27868571,1228.34645669 2598.42519685,1228.34645669 2598.42519685,1228.34645669C2598.42519685,1228.34645669 2480.06537552,1149.43990914 2459.66841297,1135.8419341C2457.72824416,1134.54848462 2455.44862272,1133.85826867 2453.11682801,1133.85826772C2431.10714106,1133.85826772 2314.96062992,1133.85826772 2314.96062992,1133.85826772Z"/>
-                </g>
-              </g>
-            </g>
-          </g>
-        </svg>
-        <span class="nav__logo-wordmark" aria-hidden="true">
-          <span class="nav__logo-line">Incremental</span>
-          <span class="nav__logo-line">Software</span>
-        </span>
-      </a>
-      <p class="footer__brand-blurb">
-        Making web extensions for everyone. Boutique consultancy for extension developers, led by Simeon Vincent.
-      </p>
-    </div>
-
-    <div class="footer__col">
-      <p class="footer__col-heading">Work</p>
-      <ul class="footer__col-links">
-        <li><a href="#services" class="footer__col-link">Approach</a></li>
-        <li><a href="#standards" class="footer__col-link">Standards</a></li>
-        <li><a href="#contact" class="footer__col-link">Case studies</a></li>
-      </ul>
-    </div>
-
-    <div class="footer__col">
-      <p class="footer__col-heading">Contact</p>
-      <ul class="footer__col-links">
-        <li><a href="https://docs.google.com/forms/d/e/1FAIpQLScjyhRBopKZEZkzT98yRunqww01aXsZcsSMXXzLhgNcSxcDPQ/viewform" class="footer__col-link">Start a conversation</a></li>
-        <li><a href="https://calendar.app.google/8qMhNJo92CsEvL3P6" class="footer__col-link">Book a consultation</a></li>
-      </ul>
-    </div>
-
-    <div class="footer__col">
-      <p class="footer__col-heading">Elsewhere</p>
-      <ul class="footer__col-links">
-        <li><a href="https://toot.cafe/@dotproto" class="footer__col-link" rel="me">@dotproto on Mastodon</a></li>
-        <li><a href="https://www.w3.org/community/webextensions/" class="footer__col-link">W3C WebExtensions CG</a></li>
-      </ul>
-    </div>
-
-  </div>
-
   <div class="footer__bottom">
-    <span class="footer__bottom-text">&#xA9; <span id="footer-year"></span> INCREMENTAL SOFTWARE, LLC</span>
-    <span class="footer__bottom-text">Making web extensions for everyone.</span>
+    <span class="footer__bottom-text">&#xA9; <span id="footer-year">{% copyrightYear %}</span> Incremental Software, LLC</span>
+    <span class="footer__bottom-text">Made in beautiful uptown Oakland, CA</span>
   </div>
 </footer>
 
