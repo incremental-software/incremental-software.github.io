@@ -646,7 +646,7 @@ a:hover {
 /* -- Footer ---------------------------------------------------------------- */
 .footer {
   border-top: 1px solid var(--border-ink);
-  padding: var(--sp-8) var(--gutter);
+  padding: var(--sp-8) var(--gutter) var(--sp-7);
 }
 
 .footer__bottom {
@@ -775,6 +775,9 @@ a:hover {
     padding-top: 0;
     flex-direction: row;
     flex-wrap: wrap;
+  }
+  .contact__heading {
+    margin-bottom: var(--sp-7);
   }
 
   /* Footer: 2-col */
