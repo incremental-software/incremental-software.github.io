@@ -4,219 +4,85 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Incremental Software, LLC</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&family=Stack+Sans+Headline:wght@200..700&display=block" rel="stylesheet">
-
-<link rel="stylesheet" href="/static/css/main.css">
-<link rel="icon" href="/static/img/logo-mark.svg" type="image/svg+xml">
-<link rel="me" href="https://toot.cafe/@dotproto">
+  <link rel="me" href="https://toot.cafe/@dotproto">
   <style>
+:root {
+  font-size: 16px;
+  --size-300: clamp(0.7rem, 0.66rem + 0.2vw, 0.8rem);
+  --size-400: clamp(0.88rem, 0.83rem + 0.24vw, 1rem);
+  --size-500: clamp(1.09rem, 1rem + 0.47vw, 1.33rem);
+  --size-600: clamp(1.37rem, 1.21rem + 0.8vw, 1.78rem);
+  --size-700: clamp(1.71rem, 1.45rem + 1.29vw, 2.37rem);
+  --size-800: clamp(2.14rem, 1.74rem + 1.99vw, 3.16rem);
+  --size-900: clamp(2.67rem, 2.07rem + 3vw, 4.21rem);
+  --size-1000: clamp(3.34rem, 2.45rem + 4.43vw, 5.61rem);
+}
 
+body {
+  margin: 0;
+  padding: 1rem;
+  padding: var(--size-600);
+  font-family: sans-serif;
+  font-size: var(--size-500);
+}
+header {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  gap: 4vmin;
+  margin-bottom: 10vmin;
+}
+#logo {
+  height: 40vmin;
+  min-width: calc(40vmin / 3 * 2);
+}
+main {
+  width: 93vmin;
+  margin: 0 auto;
+}
+h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 11vmin;
+}
+h1 > span {
+  display: inline-block;
+}
+.link-wrapper {
+  all: unset;
+  margin-top: 10vmin;
+  display: flex;
+  justify-content: center;
+}
+.link {
+  all: unset;
+  padding: 0 var(--size-700);
+}
+.link:not(:last-child) {
+  border-right: 1px solid black;
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
   </style>
 </head>
 <body>
-<header class="nav" id="nav" role="banner">
-  <div class="nav__inner">
-
-    <a href="/" class="nav__brand" aria-label="Incremental Software — home">
-      <svg class="nav__logo-mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 377" aria-hidden="true" focusable="false">
-        <defs>
-          <clipPath id="logo-clip-nav">
-            <rect x="47.24409449" y="2574" width="1645.75590551" height="1301"/>
-          </clipPath>
-        </defs>
-        <g transform="translate(0,-2574)">
-          <g transform="matrix(0.315921,0,0,0.289777,-14.92541,1828.113759)">
-            <g clip-path="url(#logo-clip-nav)">
-              <g transform="matrix(3.165347,0,0,3.450928,-7130.092041,-686.719731)">
-                <path fill-rule="evenodd" d="M2784.77184342,1037.61692448C2786.41475226,1038.71219312 2787.40157325,1040.55607958 2787.4015748,1042.5306081C2787.4015748,1070.73229064 2787.4015748,1279.03589417 2787.4015748,1316.92914987C2787.40157056,1318.49538916 2786.77938028,1319.99747767 2785.67187875,1321.10497299C2784.56437723,1322.21246832 2783.06228524,1322.83465019 2781.49604595,1322.83464567C2736.48826242,1322.83464567 2448.47471632,1322.83464567 2413.02490937,1322.83464567C2410.69311292,1322.83464572 2408.41348956,1322.14442973 2406.47331931,1320.85097928C2387.88099539,1308.45609666 2287.89365647,1241.79787072 2270.34626682,1230.09961095C2268.70335797,1229.00434231 2267.71653699,1227.16045585 2267.71653543,1225.18592733C2267.71653543,1196.98424479 2267.71653543,988.68064126 2267.71653543,950.78738557C2267.71653968,949.22114627 2268.33872996,947.71905777 2269.44623148,946.61156244C2270.55373301,945.50406711 2272.055825,944.88188524 2273.62206429,944.88188976C2318.62984781,944.88188976 2606.64339391,944.88188976 2642.09320087,944.88188976C2644.42499729,944.88188971 2646.70462063,945.57210569 2648.64479086,946.86555611C2667.2371146,959.26043861 2767.22445335,1025.91866444 2784.77184342,1037.61692448ZM2456.69291339,1039.37007874C2456.69291339,1039.37007874 2575.05273471,1118.27662629 2595.44969727,1131.87460133C2597.38986607,1133.16805081 2599.66948752,1133.85826676 2602.00128222,1133.85826772C2624.01096918,1133.85826772 2740.15748031,1133.85826772 2740.15748031,1133.85826772C2740.15748031,1133.85826772 2621.79765899,1054.95172017 2601.40069643,1041.35374513C2599.46052763,1040.06029565 2597.18090618,1039.37007969 2594.84911148,1039.37007874C2572.83942452,1039.37007874 2456.69291339,1039.37007874 2456.69291339,1039.37007874ZM2314.96062992,1133.85826772C2314.96062992,1133.85826772 2433.32045125,1212.76481527 2453.7174138,1226.3627903C2455.65758261,1227.65623979 2457.93720405,1228.34645574 2460.26899876,1228.34645669C2482.27868571,1228.34645669 2598.42519685,1228.34645669 2598.42519685,1228.34645669C2598.42519685,1228.34645669 2480.06537552,1149.43990914 2459.66841297,1135.8419341C2457.72824416,1134.54848462 2455.44862272,1133.85826867 2453.11682801,1133.85826772C2431.10714106,1133.85826772 2314.96062992,1133.85826772 2314.96062992,1133.85826772Z"/>
-              </g>
-            </g>
-          </g>
-        </g>
-      </svg>
-      <span class="nav__logo-wordmark" aria-hidden="true">
-        <span class="nav__logo-line">Incremental</span>
-        <span class="nav__logo-line">Software</span>
-      </span>
-    </a>
-
-    <nav class="nav__links" id="nav-links" aria-label="Primary navigation">
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLScjyhRBopKZEZkzT98yRunqww01aXsZcsSMXXzLhgNcSxcDPQ/viewform" class="btn btn--primary nav__cta-mobile">Start a conversation</a>
-    </nav>
-
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLScjyhRBopKZEZkzT98yRunqww01aXsZcsSMXXzLhgNcSxcDPQ/viewform" class="btn btn--primary btn--sm nav__cta">Start a conversation</a>
-
-    <button class="nav__toggle" id="nav-toggle" aria-controls="nav-links" aria-expanded="false" aria-label="Toggle navigation">
-      <svg class="nav__toggle-icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
-        <line x1="3" y1="6" x2="21" y2="6"/>
-        <line x1="3" y1="12" x2="21" y2="12"/>
-        <line x1="3" y1="18" x2="21" y2="18"/>
-      </svg>
-      <svg class="nav__toggle-icon nav__toggle-icon--close" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
-        <line x1="6" y1="6" x2="18" y2="18"/>
-        <line x1="18" y1="6" x2="6" y2="18"/>
-      </svg>
-    </button>
-
-  </div>
+<header>
+  <svg id="logo" lang="en" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 2 3">
+    <rect x="0" y="0" height="1" width="1" fill="#FF431A"></rect>
+    <rect x="1" y="1" height="1" width="1" fill="#0ECD2D"></rect>
+    <rect x="0" y="2" height="1" width="1" fill="#336CFF"></rect>
+    <rect x="1" y="2" height="1" width="1" fill="#1A1A1A"></rect>
+  </svg>
+  <h1><span>Incremental<br>Software</span></h1>
 </header>
-
 <main>
-
-  <!-- -- Hero ----------------------------------------------- -->
-  <section class="hero">
-    <div class="hero__inner">
-      <h1 class="heading hero__heading">
-        Browser extensions,<br>
-        built by people who<br>
-        <em class="hero__heading-accent">help shape the platform</em>.
-      </h1>
-      <p class="hero__lede">
-        A boutique consultancy for extension developers. Direct access to one of the most
-        experienced practitioners in the field. No account managers, no layers.
-      </p>
-      <div class="hero__actions">
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLScjyhRBopKZEZkzT98yRunqww01aXsZcsSMXXzLhgNcSxcDPQ/viewform" class="btn btn--primary">Start a conversation &#x2192;</a>
-        <a href="https://calendar.app.google/8qMhNJo92CsEvL3P6" class="btn btn--secondary">Book a consultation</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- -- Services -------------------------------------------- -->
-  <section class="services" id="services">
-    <div class="services__inner">
-
-      <div class="services__header">
-        <div>
-          <p class="eyebrow services__header-eyebrow">What we do</p>
-          <h2 class="heading services__heading">Four things, done well.</h2>
-        </div>
-        <p class="services__intro">
-          We take on a small number of engagements at a time. If what you need isn't
-          one of these, ask anyway. We usually know who to call.
-        </p>
-      </div>
-
-      <div class="services__list">
-
-        <div class="services__item">
-          <span class="services__item-num">01</span>
-          <h3 class="services__item-title">Platform consulting</h3>
-          <p class="services__item-body">Deep technical work on your extension: architecture reviews, MV3 migrations, performance, security posture, platform API questions that nobody else has answers to.</p>
-          <span class="services__item-estimate">2–6 weeks</span>
-        </div>
-
-        <div class="services__item">
-          <span class="services__item-num">02</span>
-          <h3 class="services__item-title">Store policies &amp; review</h3>
-          <p class="services__item-body">Help preparing, submitting, and when necessary appealing reviews on the Chrome Web Store, Firefox Add-ons, and Edge Add-ons. We've been on both sides of the process.</p>
-          <span class="services__item-estimate">Ad-hoc or retainer</span>
-        </div>
-
-        <div class="services__item">
-          <span class="services__item-num">03</span>
-          <h3 class="services__item-title">Standards advocacy</h3>
-          <p class="services__item-body">Represent your extension's interests in the WebExtensions Working Group. Draft proposals, navigate cross-browser politics, turn product needs into platform features.</p>
-          <span class="services__item-estimate">Retainer</span>
-        </div>
-
-        <div class="services__item">
-          <span class="services__item-num">04</span>
-          <h3 class="services__item-title">Diligence &amp; audits</h3>
-          <p class="services__item-body">Acquirer-side and investor-side technical due diligence on extension businesses. Codebase assessment, platform risk, review-process exposure, maintainer health.</p>
-          <span class="services__item-estimate">1–3 weeks</span>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- -- Standards ------------------------------------------- -->
-  <section class="standards" id="standards">
-    <div class="standards__inner">
-
-      <div>
-        <p class="eyebrow standards__eyebrow">Open standards</p>
-        <h2 class="heading standards__heading">We don't just build on the platform. We help shape it.</h2>
-      </div>
-
-      <div>
-        <p class="standards__body">
-          Simeon has worked directly on multiple major web browsers and is a founding member of the WebExtensions Community Group, the venue where browser engineers from all major browsers and extension developers debate and align on the future of cross-browser extensions.
-        </p>
-        <p class="standards__body">
-          When a platform gap is blocking your product, we can do more than work around it. We can take it to the group, create proposals, build consensus, and contribute changes directly to browser engines.
-        </p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- -- Contact ---------------------------------------------- -->
-  <section class="contact" id="contact">
-    <div class="contact__inner">
-
-      <div>
-        <p class="eyebrow contact__eyebrow">Get in touch</p>
-        <h2 class="heading contact__heading">Start a conversation.</h2>
-        <p class="contact__lede">
-          Tell us a little about what you're working on and what you're stuck on.
-          We'll reply within a business day, usually faster.
-        </p>
-      </div>
-
-      <div class="contact__actions">
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLScjyhRBopKZEZkzT98yRunqww01aXsZcsSMXXzLhgNcSxcDPQ/viewform" class="btn btn--primary">Send us a message &#x2192;</a>
-        <a href="https://calendar.app.google/8qMhNJo92CsEvL3P6" class="btn btn--secondary">Book a 30-minute call</a>
-        <p class="contact__action-note">
-          Not sure if we're the right fit? Schedule a free, no obligation call. We'll tell you honestly whether we can help.
-        </p>
-      </div>
-
-    </div>
-  </section>
-
+  <p>Building a browser extension business is hard. We can help.</p>
+  <p><a href="https://docs.google.com/forms/d/e/1FAIpQLScjyhRBopKZEZkzT98yRunqww01aXsZcsSMXXzLhgNcSxcDPQ/viewform?usp=publish-editor">Contact us</a> or <a href="https://calendar.app.google/8qMhNJo92CsEvL3P6">book an initial consultation</a>.</p>
 </main>
-
-<!-- -- Footer ------------------------------------------------- -->
-<footer class="footer">
-  <div class="footer__bottom">
-    <span class="footer__bottom-text">&#xA9; <span id="footer-year">2026</span> Incremental Software, LLC</span>
-    <span class="footer__bottom-text">Made in beautiful uptown Oakland, CA</span>
-  </div>
-</footer>
-
-<script>
-(function () {
-  // Copyright year
-  var yearEl = document.getElementById('footer-year');
-  if (yearEl) yearEl.textContent = new Date().getFullYear();
-
-  // Nav scroll state
-  var nav = document.getElementById('nav');
-  window.addEventListener('scroll', function () {
-    nav.classList.toggle('nav--scrolled', window.scrollY > 8);
-  }, { passive: true });
-
-  // Mobile menu toggle
-  var toggle = document.getElementById('nav-toggle');
-  var links  = document.getElementById('nav-links');
-  toggle.addEventListener('click', function () {
-    var isOpen = nav.classList.toggle('nav--open');
-    toggle.setAttribute('aria-expanded', String(isOpen));
-  });
-
-  // Close menu when a nav link is clicked
-  links.querySelectorAll('.nav__link, .nav__cta-mobile').forEach(function (el) {
-    el.addEventListener('click', function () {
-      nav.classList.remove('nav--open');
-      toggle.setAttribute('aria-expanded', 'false');
-    });
-  });
-}());
-</script>
 
 </body>
 </html>
