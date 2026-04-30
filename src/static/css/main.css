@@ -432,7 +432,7 @@ a:hover {
 
 .services__item {
   display: grid;
-  grid-template-columns: 5rem 1fr 1fr 12.5rem;
+  grid-template-columns: 3rem 1fr 1fr 12.5rem;
   gap: var(--sp-6);
   padding: 1.75rem 0;
   border-top: 1px solid var(--border-ink);
@@ -446,8 +446,7 @@ a:hover {
 .services__item-num {
   font-family: var(--font-mono);
   font-size: var(--fs-mono);
-  font-weight: 500;
-  color: var(--accent-text);
+  font-weight: 800;
 }
 
 .services__item-title {
@@ -472,6 +471,11 @@ a:hover {
   color: var(--fg-subtle);
   letter-spacing: 0.04em;
   line-height: 1.5;
+}
+.services__item-estimate:before {
+  display: block;
+  content: "Typical engagement";
+  font-weight: 800;
 }
 
 /* -- Work (case studies) --------------------------------------------------- */
@@ -719,8 +723,8 @@ a:hover {
   /* Services header: single column */
   .services__header {
     grid-template-columns: 1fr;
-    gap: var(--sp-8);
-    margin-bottom: var(--sp-6);
+    gap: var(--sp-7);
+    margin-bottom: var(--sp-7);
   }
 
   /* Services item: collapse to 2-col then wrap */
@@ -745,6 +749,11 @@ a:hover {
     grid-column: 1 / -1;
     color: var(--fg-subtle);
   }
+  .services__item-estimate:before {
+    content: "Typical engagement:";
+    display: inline-block;
+    padding-right: .5rem;
+  }
 
   /* Work: 2 columns */
   .work__grid {
@@ -754,6 +763,7 @@ a:hover {
   /* Standards: stack */
   .standards__inner {
     grid-template-columns: 1fr;
+    gap: var(--sp-7);
   }
 
   /* Contact: stack */
@@ -781,7 +791,7 @@ a:hover {
 @media (max-width: 639px) {
   :root {
     --gutter: 1rem;
-    --section-v: var(--sp-7);
+    --section-v: var(--sp-8);
   }
 
   /* Hero */
@@ -812,5 +822,9 @@ a:hover {
   .hero__actions {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .contact__heading {
+    margin-bottom: var(--sp-7);
   }
 }
